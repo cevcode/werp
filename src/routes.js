@@ -1,5 +1,5 @@
 import { Home } from './modules/Home';
-import { Auth } from './modules/Auth';
+import { AuthPage } from './modules/AuthPage';
 
 export default [
     {
@@ -9,6 +9,6 @@ export default [
     },
     {
         path: '/auth',
-        component: Auth,
+        component: AuthPage,
     },
 ];

@@ -1,7 +1,7 @@
 $transitionHover: ease-in 200ms;
 $transitionActive: ease-in 150ms;
 
-$btn-void: $orange, $white, #ff5100d9, $white, #ff5100d1, $white, $grey, $white;
+$btn-void: $blue, $white, #47BBF1, $white, #3E89B8, $white, $grey, $white;
 $btn-fill: transparent, $white, #ff510047, $white, transparent, $white, $grey, $white;
 @mixin btn-style(
   $colorBgDefault,
@@ -58,9 +58,9 @@ $btn-fill: transparent, $white, #ff510047, $white, transparent, $white, $grey, $
     }
     &_fill {
       @include btn-style($btn-fill...);
-      border: 1px solid $orange;
+      border: 1px solid $blue;
       &:hover {
-        border: 1px solid $orange;
+        border: 1px solid $blue;
       }
     }
   }

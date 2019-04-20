@@ -5,6 +5,13 @@ $orange: #ff5100;
 $white: #fff;
 $grey: #8b9497;
 $bgDark: #1a1a1a;
+$blue: #459cd0;
+$brown: #484848;
+
+@mixin main-font($weight) {
+  font-family: "Montserrat", sans-serif;
+  font-weight: $weight;
+}
 
 @mixin base-sizes() {
   &__size {
@@ -16,8 +23,26 @@ $bgDark: #1a1a1a;
     }
     &_full {
       width: 100%;
-      height: 100%;
+      height: 42px;
     }
+  }
+}
+
+@mixin placeholder-color($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  &::-moz-placeholder {
+    color: $color;
+  }
+
+  &:-moz-placeholder {
+    color: $color;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
   }
 }
 
@@ -50,14 +75,32 @@ $bgDark: #1a1a1a;
   }
 }
 
-@mixin container-size() {
-  width: 1280px;
-  margin: auto;
+@mixin base-aligns() {
+  &__align {
+    &_left {
+      text-align: left;
+    }
+    &_center {
+      text-align: center;
+    }
+    &_right {
+      text-align: right;
+    }
+  }
 }
 
-@mixin main-font($weight) {
-  font-family: "Montserrat", sans-serif;
-  font-weight: $weight;
+@mixin base-weight() {
+  &__weight {
+    &_500 {
+      @include main-font(500);
+    }
+    &_600 {
+      @include main-font(600);
+    }
+    &_700 {
+      @include main-font(700);
+    }
+  }
 }
 
 h1,h2,h3,h4,h5,h6,p {
@@ -83,7 +126,51 @@ a {
 body {
   font-size: 13px;
   @include main-font(500);
-  background-color: #F3F7FA;
   padding: 0;
+  box-sizing: border-box;
   margin: 0;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-image: radial-gradient(circle at 99% 1%, rgba(250, 63, 93, 0.18), rgba(250, 63, 93, 0)), radial-gradient(circle at 9% 1%, rgba(86, 79, 255, 0.34), rgba(86, 79, 255, 0));
+  > * {
+    box-sizing: border-box;
+  }
+}
+
+// Responsive settings
+$screenSizes: (
+        desktop: 1320px,
+        tablet: 991px,
+        mobile: 768px,
+        mobile-small: 480px,
+);
+
+@mixin screen-gt($name) {
+  @media only screen and (min-width: #{map-get($screenSizes, $name)}) {
+    @content;
+  }
+}
+
+@mixin screen-lt($name) {
+  @media only screen and (max-width: #{map-get($screenSizes, $name)}) {
+    @content;
+  }
+}
+
+@mixin container-size() {
+  width: 1320px;
+  margin: auto;
+  padding: 0 20px;
+  @include screen-lt(desktop) {
+    width: 100%;
+  }
+}
+
+@mixin bgImage($image) {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-image: url($image);
+  @include screen-lt(mobile-small) {
+    background-position: 51% 0;
+  }
 }

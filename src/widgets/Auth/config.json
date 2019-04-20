@@ -1,0 +1,75 @@
+{
+  "auth": [
+    {
+      "type": "login",
+      "id": "login",
+      "name": "login",
+      "placeholder": "Логин",
+      "validations": "login",
+      "validationsError": "Логин должен содержать от 4 до 8 латинских символов",
+      "autoComplete": "username"
+    },
+    {
+      "type": "email",
+      "id": "email",
+      "name": "email",
+      "margin": "top_x2",
+      "placeholder": "Электронная почта",
+      "validations": "email",
+      "validationsError": "Формат Email не верен",
+      "autoComplete": "email"
+    },
+    {
+      "type": "password",
+      "id": "password",
+      "name": "password",
+      "margin": "top_x2",
+      "placeholder": "Пароль",
+      "validations": "password",
+      "validationsError": "Пароль должен содержать минимум одну цифру и букву",
+      "autoComplete": "new-password"
+    }
+  ],
+  "login": [
+    {
+      "type": "text",
+      "id": "database",
+      "name": "database",
+      "margin": "top_x2",
+      "placeholder": "База данных",
+      "validationsError": ""
+    },
+    {
+      "type": "email",
+      "id": "email",
+      "name": "email",
+      "margin": "top_x2",
+      "placeholder": "Электронная почта",
+      "validations": "email",
+      "validationsError": "",
+      "autoComplete": "email"
+    },
+    {
+      "type": "password",
+      "id": "password",
+      "name": "password",
+      "margin": "top_x2",
+      "placeholder": "Пароль",
+      "validations": "password",
+      "validationsError": "",
+      "autoComplete": "current-password"
+    }
+  ],
+  "reset": [
+    {
+      "type": "email",
+      "id": "email",
+      "name": "email",
+      "margin": "top_x2",
+      "placeholder": "Электронная почта",
+      "validations": "email",
+      "validationsError": "Формат Email не верен",
+      "autoComplete": "email"
+    }
+  ]
+}

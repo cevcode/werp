@@ -1,11 +1,10 @@
 .title {
   @include base-aligns();
   @include base-margins();
-  color: $white;
-  &__container {
-    h1, h2 {
-      @include main-font(500);
-    }
+  @include base-weight();
+  color: $black;
+  &__uppercase {
+    text-transform: uppercase;
   }
   &__size {
     &_l {
@@ -24,6 +23,9 @@
     }
     &_orange {
       color: $orange;
+    }
+    &_black {
+      color: $black;
     }
   }
 }
