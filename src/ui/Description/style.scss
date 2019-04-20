@@ -1,0 +1,7 @@
+.description {
+  font-size: 12px;
+  color: $brown;
+  @include main-font(500);
+  @include base-aligns();
+  @include base-margins();
+}

@@ -1,0 +1,14 @@
+.field {
+  @include base-margins();
+
+  &__label {
+    font-size: 14px;
+  }
+
+  &__error {
+    font-size: 12px;
+    color: $orange;
+    margin-top: 10px;
+    @include main-font(600);
+  }
+}

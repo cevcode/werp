@@ -1,0 +1,68 @@
+$transitionHover: ease-in 200ms;
+$transitionActive: ease-in 150ms;
+
+$btn-void: $orange, $white, #ff5100d9, $white, #ff5100d1, $white, $grey, $white;
+$btn-fill: transparent, $white, #ff510047, $white, transparent, $white, $grey, $white;
+@mixin btn-style(
+  $colorBgDefault,
+  $colorDefault,
+  $colorBgHover,
+  $colorHover,
+  $colorBgActive,
+  $colorActive,
+  $colorBgDisabled,
+  $colorDisabled
+) {
+  background: $colorBgDefault;
+  color: $colorDefault;
+  &:hover {
+    background: $colorBgHover;
+  }
+
+  &:active {
+    background: $colorBgActive;
+    color: $colorActive;
+  }
+
+  &:disabled {
+    background: $colorBgDisabled;
+    cursor: not-allowed;
+    user-select: none;
+  }
+}
+
+.ux-button {
+  @include base-sizes();
+  @include base-margins();
+  height: 27px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 5px;
+  border: none;
+  text-transform: uppercase;
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    transition: $transitionHover;
+  }
+
+  &:active {
+    transition: $transitionActive;
+  }
+
+  &__style {
+    &_void {
+      @include btn-style($btn-void...);
+    }
+    &_fill {
+      @include btn-style($btn-fill...);
+      border: 1px solid $orange;
+      &:hover {
+        border: 1px solid $orange;
+      }
+    }
+  }
+
+}

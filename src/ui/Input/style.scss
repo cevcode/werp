@@ -1,0 +1,18 @@
+.ux-input {
+  height: 42px;
+  width: 100%;
+  border: 1px solid $orange;
+  border-radius: 5px;
+  background-color: $bgDark;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+  @include main-font(500);
+  color: $white;
+  @include placeholder-color($brown);
+  outline: 0;
+
+  &_disabled {
+    background-color: #000;
+  }
+}

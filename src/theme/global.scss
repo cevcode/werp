@@ -1,0 +1,89 @@
+@import "fonts.scss";
+
+$black: #0a0b0a;
+$orange: #ff5100;
+$white: #fff;
+$grey: #8b9497;
+$bgDark: #1a1a1a;
+
+@mixin base-sizes() {
+  &__size {
+    &_l {
+      width: 130px;
+    }
+    &_s {
+      width: 85px;
+    }
+    &_full {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@mixin base-margins() {
+  &__margin {
+    &_left {
+      margin-left: 10px;
+      &_x2 {
+        margin-left: 20px;
+      }
+    }
+    &_right {
+      margin-right: 10px;
+      &_x2 {
+        margin-right: 20px;
+      }
+    }
+    &_top {
+      margin-top: 10px;
+      &_x2 {
+        margin-top: 20px;
+      }
+    }
+    &_bottom {
+      margin-bottom: 10px;
+      &_x2 {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@mixin container-size() {
+  width: 1280px;
+  margin: auto;
+}
+
+@mixin main-font($weight) {
+  font-family: "Montserrat", sans-serif;
+  font-weight: $weight;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+ul,ol {
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+}
+div {
+  &:focus {
+    outline: 0;
+  }
+}
+a {
+  text-decoration: none;
+  color: $black;
+  font-size: 16px;
+}
+body {
+  font-size: 13px;
+  @include main-font(500);
+  background-color: #F3F7FA;
+  padding: 0;
+  margin: 0;
+}
