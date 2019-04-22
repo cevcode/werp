@@ -23,10 +23,10 @@ export enum FillType {
 }
 
 export enum ISize {
-    "s",
-    "m",
-    "l",
-    "full"
+    s = "s",
+    m = "m",
+    l = "l",
+    full = "full"
 }
 
 export enum WeightEnum {

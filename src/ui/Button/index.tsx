@@ -8,11 +8,11 @@ export interface IButton {
     className?: string;
     onClick?: () => void;
     size: ISize;
-    text: string;
-    style: FillType;
-    margin: MarginType;
-    disabled: boolean;
-    type: ButtonType;
+    text?: string;
+    style?: FillType;
+    margin?: MarginType;
+    disabled?: boolean;
+    type?: ButtonType;
 }
 
 // tslint:disable-next-line:variable-name
