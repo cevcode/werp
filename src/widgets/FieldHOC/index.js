@@ -39,7 +39,7 @@ const FieldWrapperHOC = Component => {
     return withFormsy(Wrapped);
 };
 
-FieldWrapperHOC.propTypes = {
+FieldWrapperHOC.PropTypes = {
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
 };
