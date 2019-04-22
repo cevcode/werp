@@ -9,13 +9,13 @@ import { AlignType, ISize, MarginType, WeightEnum } from "ui/enums";
 import { Color } from "csstype";
 
 export interface ITitle {
-    size: ISize;
-    align: AlignType;
-    weight: WeightEnum;
-    margin: MarginType;
-    tagName: "h1" | "h2";
-    color: Color;
-    extraCLass: string;
+    size?: ISize;
+    align?: AlignType;
+    weight?: WeightEnum;
+    margin?: MarginType;
+    tagName?: "h1" | "h2";
+    color?: Color;
+    extraCLass?: string;
     uppercase?: boolean;
     containerClassName?: string;
 }
