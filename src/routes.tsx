@@ -1,4 +1,4 @@
-import { Home } from "./modules/Home";
+import { Home } from "./modules/Home/index";
 import { AuthPage } from "./modules/AuthPage";
 
 export default [

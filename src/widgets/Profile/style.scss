@@ -1,0 +1,9 @@
+.profile {
+  &__image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: $orange;
+    @include base-font-sizes;
+  }
+}

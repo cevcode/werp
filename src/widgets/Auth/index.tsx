@@ -4,7 +4,6 @@ import { Input } from "widgets/fields";
 import { Column } from "ui/Layout";
 import { Button } from "ui/Button";
 import { Title } from "ui/Title";
-import { Description } from "ui/Description";
 import { getValidationForField } from "./validations";
 import {default as config} from "./config.json";
 

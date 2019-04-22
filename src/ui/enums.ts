@@ -26,6 +26,7 @@ export enum ISize {
     s = "s",
     m = "m",
     l = "l",
+    xl = "xl",
     full = "full"
 }
 
@@ -39,5 +40,6 @@ export type ButtonType = "submit" | "reset" | "button";
 
 export enum Colors {
     "white",
-    "orange"
+    "orange",
+    "black",
 }

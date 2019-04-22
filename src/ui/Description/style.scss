@@ -4,4 +4,6 @@
   @include main-font(500);
   @include base-aligns();
   @include base-margins();
+  @include base-font-sizes();
+  @include base-colors();
 }
