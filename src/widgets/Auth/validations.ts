@@ -1,5 +1,4 @@
-import React from 'react';
-import * as Formsy from 'formsy-react';
+import * as Formsy from "formsy-react";
 
 function oneLetterOneNumberAtLeast(value) {
     if (!value) return false;
@@ -16,31 +15,31 @@ function onlyLettersAndNumbers(value) {
     return /^[a-zA-Z0-9]+$/.test(value.toString());
 }
 
-export function minLength(value, number) {
+export function minLength(value, _number) {
     if (!value) return false;
-    return value.toString().length >= number;
+    return value.toString().length >= _number;
 }
 
-export function maxLength(value, number) {
+export function maxLength(value, _number) {
     if (!value) return false;
-    return value.toString().length <= number;
+    return value.toString().length <= _number;
 }
 
-Formsy.addValidationRule('isLogin', function(values, value) {
+Formsy.addValidationRule("isLogin", (values, value) => {
     return onlyLettersAndNumbers(value) && minLength(value, 4) && maxLength(value, 16);
 });
 
-Formsy.addValidationRule('isPassword', function(values, value) {
+Formsy.addValidationRule("isPassword", (values, value) => {
     return oneLetterOneNumberAtLeast(value) && minLength(value, 8) && allLettersIsLatin(value);
 });
 
 export function getValidationForField(validation) {
     switch (validation) {
-        case 'email':
-            return 'isEmail';
-        case 'login':
-            return 'isLogin';
-        case 'password':
-            return 'isPassword';
+        case "email":
+            return "isEmail";
+        case "login":
+            return "isLogin";
+        case "password":
+            return "isPassword";
     }
 }

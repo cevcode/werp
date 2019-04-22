@@ -1,52 +1,63 @@
-import React from 'react';
-import Formsy from 'formsy-react';
-import { Input } from 'widgets/fields';
-import { Column } from 'ui/Layout';
-import { Button } from 'ui/Button';
-import { Title } from 'ui/Title';
-import { Description } from 'ui/Description';
-import { getValidationForField } from './validations';
-import config from './config';
-import style from './style.scss';
+import * as React from "react";
+import Formsy from "formsy-react";
+import { Input } from "widgets/fields";
+import { Column } from "ui/Layout";
+import { Button } from "ui/Button";
+import { Title } from "ui/Title";
+import { Description } from "ui/Description";
+import { getValidationForField } from "./validations";
+import {default as config} from "./config.json";
+
+
+import "./style.scss";
+import * as style from "./style.scss";
+import { WeightEnum, ISize, MarginType } from "ui/enums";
 
 function getTitle(authType) {
     switch (authType) {
-        case 'auth':
+        case "auth":
         default:
-            return { title: 'Регистрация', button: 'Зарегистрироваться' };
-        case 'login':
-            return { title: 'Авторизация', button: 'Войти' };
-        case 'reset':
-            return { title: 'Восстановить пароль', button: 'Восстановить' };
+            return { title: "Регистрация", button: "Зарегистрироваться" };
+        case "login":
+            return { title: "Авторизация", button: "Войти" };
+        case "reset":
+            return { title: "Восстановить пароль", button: "Восстановить" };
     }
 }
 
-class Auth extends React.Component {
-    state = {
+// tslint:disable-next-line:no-empty-interface
+export interface IAuth {
+    authType?: "login";
+}
+
+class Auth extends React.Component<IAuth, {}> {
+    public state = {
         valid: false,
-        error: '',
+        error: "",
     };
 
-    formRef = ref => (this.form = ref);
+    private _form;
 
-    onValid = () => {
+    private formRef = ref => (this._form = ref);
+
+    private onValid = () => {
         this.setState({ valid: true });
-    };
+    }
 
-    onInvalid = () => {
+    private onInvalid = () => {
         this.setState({ valid: false });
-    };
+    }
 
-    onSubmit = () => {
+    private onSubmit = () => {
         console.log(this.props);
-    };
+    }
 
-    render() {
+    public render() {
         const { valid, error } = this.state;
-        const { authType = 'login' } = this.props;
+        const { authType = "login" } = this.props;
         return (
             <Column className={style.auth}>
-                <Title uppercase weight="600">
+                <Title uppercase weight={WeightEnum.w600}>
                     {getTitle(authType).title}
                 </Title>
                 <Formsy
@@ -81,7 +92,7 @@ class Auth extends React.Component {
                             />
                         );
                     })}
-                    <Button className={style.auth__button} type="submit" size="full" margin="top_x2" disabled={!valid}>
+                    <Button className={style.auth__button} type="submit" size={ISize.full} margin={MarginType.top_x2} disabled={!valid}>
                         {getTitle(authType).button}
                     </Button>
                 </Formsy>
