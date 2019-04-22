@@ -24,8 +24,20 @@ export enum FillType {
 
 export enum ISize {
     "s",
+    "m",
     "l",
     "full"
 }
 
+export enum WeightEnum {
+    w500 = "500",
+    w600 = "600",
+    w700 = "700"
+}
+
 export type ButtonType = "submit" | "reset" | "button";
+
+export enum Colors {
+    "white",
+    "orange"
+}
