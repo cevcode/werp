@@ -1,33 +1,57 @@
 {
   "auth": [
     {
-      "type": "login",
-      "id": "login",
-      "name": "login",
-      "placeholder": "Логин",
-      "validations": "login",
-      "validationsError": "Логин должен содержать от 4 до 8 латинских символов",
-      "autoComplete": "username"
+      "type": "text",
+      "id": "database",
+      "name": "database",
+      "margin": "top_x2",
+      "placeholder": "Database",
+      "validationsError": "",
+      "required": true
+    },
+    {
+      "type": "text",
+      "id": "firstName",
+      "name": "firstName",
+      "placeholder": "First Name",
+      "validations": "",
+      "margin": "top_x2",
+      "validationsError": "",
+      "autoComplete": "",
+      "required": true
+    },
+    {
+      "type": "text",
+      "id": "lastName",
+      "name": "lastName",
+      "placeholder": "Last Name",
+      "validations": "",
+      "margin": "top_x2",
+      "validationsError": "",
+      "autoComplete": "",
+      "required": true
     },
     {
       "type": "email",
       "id": "email",
       "name": "email",
       "margin": "top_x2",
-      "placeholder": "Электронная почта",
+      "placeholder": "Email",
       "validations": "email",
-      "validationsError": "Формат Email не верен",
-      "autoComplete": "email"
+      "validationsError": "Invalid Email format",
+      "autoComplete": "email",
+      "required": true
     },
     {
-      "type": "password",
-      "id": "password",
-      "name": "password",
+      "type": "textarea",
+      "id": "comment",
+      "name": "comment",
       "margin": "top_x2",
-      "placeholder": "Пароль",
-      "validations": "password",
-      "validationsError": "Пароль должен содержать минимум одну цифру и букву",
-      "autoComplete": "new-password"
+      "placeholder": "Comment",
+      "validations": "",
+      "validationsError": "",
+      "autoComplete": "",
+      "required": false
     }
   ],
   "login": [
@@ -36,28 +60,31 @@
       "id": "database",
       "name": "database",
       "margin": "top_x2",
-      "placeholder": "База данных",
-      "validationsError": ""
+      "placeholder": "Database",
+      "validationsError": "",
+      "required": true
     },
     {
       "type": "email",
       "id": "email",
       "name": "email",
       "margin": "top_x2",
-      "placeholder": "Электронная почта",
+      "placeholder": "Email",
       "validations": "email",
       "validationsError": "",
-      "autoComplete": "email"
+      "autoComplete": "email",
+      "required": true
     },
     {
       "type": "password",
       "id": "password",
       "name": "password",
       "margin": "top_x2",
-      "placeholder": "Пароль",
+      "placeholder": "Password",
       "validations": "password",
       "validationsError": "",
-      "autoComplete": "current-password"
+      "autoComplete": "current-password",
+      "required": true
     }
   ],
   "reset": [
@@ -66,10 +93,11 @@
       "id": "email",
       "name": "email",
       "margin": "top_x2",
-      "placeholder": "Электронная почта",
+      "placeholder": "Email",
       "validations": "email",
-      "validationsError": "Формат Email не верен",
-      "autoComplete": "email"
+      "validationsError": "Invalid Email format",
+      "autoComplete": "email",
+      "required": true
     }
   ]
 }

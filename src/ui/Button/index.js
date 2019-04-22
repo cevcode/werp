@@ -23,7 +23,7 @@ function Button({ onClick, className, children, size, disabled, style, type, mar
     );
 }
 
-Button.PropTypes = {
+Button.propTypes = {
     onClick: PropTypes.func,
     size: PropTypes.oneOf(['s', 'l', 'full']),
     text: PropTypes.string,

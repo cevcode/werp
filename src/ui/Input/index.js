@@ -21,6 +21,7 @@ function Input({
     name,
     id,
     autoComplete,
+    required,
 }) {
     const className = cx(style['ux-input'], { [style['ux-input_disabled']]: disabled }, extraClass);
 
@@ -49,6 +50,7 @@ function Input({
                 placeholderChar={'\u2000'}
                 onKeyPress={_handleKeyPress}
                 onChange={e => onChange(e.target.value)}
+                required={required}
             />
         );
     }
@@ -67,6 +69,7 @@ function Input({
             placeholder={placeholder}
             onKeyPress={_handleKeyPress}
             onChange={onChange}
+            required={required}
         />
     );
 }
@@ -81,6 +84,7 @@ Input.propTypes = {
     readonly: PropTypes.bool,
     autoComplete: PropTypes.string,
     id: PropTypes.string,
+    required: PropTypes.bool,
 };
 
 Input.defaultProps = {
@@ -93,6 +97,7 @@ Input.defaultProps = {
     onChange: i => i,
     placeholder: '',
     value: '',
+    required: false,
 };
 
 export { Input };

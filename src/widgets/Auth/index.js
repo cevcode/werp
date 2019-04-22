@@ -1,6 +1,6 @@
 import React from 'react';
 import Formsy from 'formsy-react';
-import { Input } from 'widgets/fields';
+import { Field } from 'widgets/fields';
 import { Column } from 'ui/Layout';
 import { Button } from 'ui/Button';
 import { Title } from 'ui/Title';
@@ -13,11 +13,11 @@ function getTitle(authType) {
     switch (authType) {
         case 'auth':
         default:
-            return { title: 'Регистрация', button: 'Зарегистрироваться' };
+            return { title: 'Sign Up', button: 'Sign Up' };
         case 'login':
-            return { title: 'Авторизация', button: 'Войти' };
+            return { title: 'Sign In', button: 'Sign In' };
         case 'reset':
-            return { title: 'Восстановить пароль', button: 'Восстановить' };
+            return { title: 'Restore password', button: 'Restore' };
     }
 }
 
@@ -38,15 +38,16 @@ class Auth extends React.Component {
     };
 
     onSubmit = () => {
-        console.log(this.props);
+        const model = this.form.getModel();
+        console.log(model);
     };
 
     render() {
         const { valid, error } = this.state;
-        const { authType = 'login' } = this.props;
+        const { authType = 'auth' } = this.props;
         return (
             <Column className={style.auth}>
-                <Title uppercase weight="600">
+                <Title uppercase weight="600" size="s">
                     {getTitle(authType).title}
                 </Title>
                 <Formsy
@@ -65,19 +66,20 @@ class Auth extends React.Component {
                             validationsError,
                             margin,
                             autoComplete,
+                            required,
                         } = item;
                         return (
-                            <Input
-                                validations={getValidationForField(validations)}
-                                margin={margin}
-                                key={i}
-                                validationError={validationsError}
-                                required
+                            <Field
                                 type={type}
-                                autoComplete={autoComplete}
                                 id={id}
                                 placeholder={placeholder}
+                                validations={getValidationForField(validations)}
+                                validationsError={validationsError}
                                 name={name}
+                                margin={margin}
+                                autoComplete={autoComplete}
+                                key={i}
+                                required={required}
                             />
                         );
                     })}

@@ -1,0 +1,14 @@
+.ux-textarea {
+  width: 100%;
+  border: 1px solid $blue;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+  padding: 10px 20px;
+  @include main-font(500);
+  color: $black;
+  @include placeholder-color($brown);
+  outline: 0;
+  height: 80px;
+  resize: none;
+}
