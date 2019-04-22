@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { PropTypesGlobal } from 'helpers/PropTypes';
 
 import style from './style.scss';
 
@@ -28,7 +29,7 @@ Button.propTypes = {
     size: PropTypes.oneOf(['s', 'l', 'full']),
     text: PropTypes.string,
     style: PropTypes.oneOf(['void', 'fill']),
-    margin: PropTypes.oneOf(['left', 'right', 'top', 'bottom', 'left_x2', 'right_x2', 'top_x2', 'bottom_x2']),
+    margin: PropTypesGlobal('margin'),
     disabled: PropTypes.bool,
     type: PropTypes.string,
 };
@@ -37,7 +38,7 @@ Button.defaultProps = {
     size: 's',
     style: 'void',
     disabled: false,
-    margin: false,
+    margin: '',
 };
 
 export { Button };

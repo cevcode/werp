@@ -305,6 +305,7 @@ module.exports = function(webpackEnv) {
                 widgets: path.resolve('./src/widgets'),
                 ui: path.resolve('./src/ui'),
                 statics: path.resolve('./src/statics'),
+                helpers: path.resolve('./src/helpers'),
                 'react-native': 'react-native-web',
             },
             plugins: [

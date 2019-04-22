@@ -1,6 +1,7 @@
 import cx from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { PropTypesGlobal } from 'helpers/PropTypes';
 import style from './style.scss';
 
 const Description = ({ children, align, className, margin }) => {
@@ -21,8 +22,8 @@ const Description = ({ children, align, className, margin }) => {
 Description.PropTypes = {
     children: PropTypes.string,
     className: PropTypes.string,
-    align: PropTypes.oneOf(['left', 'center', 'right']),
-    margin: PropTypes.oneOf(['left', 'right', 'top', 'bottom', 'left_x2', 'right_x2', 'top_x2', 'bottom_x2']),
+    align: PropTypesGlobal('align'),
+    margin: PropTypesGlobal('margin'),
 };
 
 Description.defaultProps = {

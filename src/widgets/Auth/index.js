@@ -1,7 +1,7 @@
 import React from 'react';
 import Formsy from 'formsy-react';
 import { Field } from 'widgets/fields';
-import { Column } from 'ui/Layout';
+import { Column, Row } from 'ui/Layout';
 import { Button } from 'ui/Button';
 import { Title } from 'ui/Title';
 import { Description } from 'ui/Description';
@@ -21,10 +21,28 @@ function getTitle(authType) {
     }
 }
 
+function BottomPanel({ authType, handleAuthType }) {
+    return (
+        <Row>
+            <Button
+                className={style.auth__button_more}
+                margin="right"
+                onClick={() => handleAuthType(authType === 'auth' ? 'login' : 'auth')}
+            >
+                {authType === 'auth' ? 'Sign In' : 'Sign Up'}
+            </Button>
+            <Button className={style.auth__button_more} onClick={() => handleAuthType('reset')}>
+                Забыли пароль?
+            </Button>
+        </Row>
+    );
+}
+
 class Auth extends React.Component {
     state = {
         valid: false,
         error: '',
+        authType: 'auth',
     };
 
     formRef = ref => (this.form = ref);
@@ -42,9 +60,12 @@ class Auth extends React.Component {
         console.log(model);
     };
 
+    handleAuthType = type => {
+        this.setState({ authType: type });
+    };
+
     render() {
-        const { valid, error } = this.state;
-        const { authType = 'auth' } = this.props;
+        const { valid, error, authType } = this.state;
         return (
             <Column className={style.auth}>
                 <Title uppercase weight="600" size="s">
@@ -86,6 +107,7 @@ class Auth extends React.Component {
                     <Button className={style.auth__button} type="submit" size="full" margin="top_x2" disabled={!valid}>
                         {getTitle(authType).button}
                     </Button>
+                    <BottomPanel authType={authType} handleAuthType={this.handleAuthType} />
                 </Formsy>
             </Column>
         );

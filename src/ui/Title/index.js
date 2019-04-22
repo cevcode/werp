@@ -1,6 +1,7 @@
 import cx from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { PropTypesGlobal } from 'helpers/PropTypes';
 import style from './style.scss';
 
 const Title = ({
@@ -33,9 +34,9 @@ const Title = ({
 
 Title.propTypes = {
     size: PropTypes.oneOf(['s', 'm', 'l']),
-    align: PropTypes.oneOf(['left', 'center', 'right']),
-    weight: PropTypes.oneOf(['500', '600', '700']),
-    margin: PropTypes.oneOf(['left', 'right', 'top', 'bottom', 'left_x2', 'right_x2', 'top_x2', 'bottom_x2', '']),
+    align: PropTypesGlobal('align'),
+    weight: PropTypesGlobal('weight'),
+    margin: PropTypesGlobal('margin'),
     tagName: PropTypes.oneOf(['h1', 'h2']),
     color: PropTypes.oneOf(['white', 'orange', 'black']),
     extraCLass: PropTypes.string,
