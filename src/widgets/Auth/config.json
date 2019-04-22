@@ -65,14 +65,14 @@
       "required": true
     },
     {
-      "type": "email",
-      "id": "email",
-      "name": "email",
+      "type": "login",
+      "id": "username",
+      "name": "username",
       "margin": "top_x2",
-      "placeholder": "Email",
-      "validations": "email",
+      "placeholder": "Login",
+      "validations": "login",
       "validationsError": "",
-      "autoComplete": "email",
+      "autoComplete": "login",
       "required": true
     },
     {
@@ -81,7 +81,7 @@
       "name": "password",
       "margin": "top_x2",
       "placeholder": "Password",
-      "validations": "password",
+      "validations": "",
       "validationsError": "",
       "autoComplete": "current-password",
       "required": true

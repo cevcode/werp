@@ -6,6 +6,7 @@ import { Button } from 'ui/Button';
 import { Title } from 'ui/Title';
 import { Description } from 'ui/Description';
 import { getValidationForField } from './validations';
+import { inject, observer } from 'mobx-react';
 import config from './config';
 import style from './style.scss';
 
@@ -32,17 +33,19 @@ function BottomPanel({ authType, handleAuthType }) {
                 {authType === 'auth' ? 'Sign In' : 'Sign Up'}
             </Button>
             <Button className={style.auth__button_more} onClick={() => handleAuthType('reset')}>
-                Забыли пароль?
+                Restore password
             </Button>
         </Row>
     );
 }
 
+@inject('authStore')
+@observer
 class Auth extends React.Component {
     state = {
         valid: false,
         error: '',
-        authType: 'auth',
+        authType: 'login',
     };
 
     formRef = ref => (this.form = ref);
@@ -57,7 +60,9 @@ class Auth extends React.Component {
 
     onSubmit = () => {
         const model = this.form.getModel();
-        console.log(model);
+        const { username, password, database } = model;
+        this.props.authStore.setUserData(username, password, database);
+        this.props.authStore.login();
     };
 
     handleAuthType = type => {
