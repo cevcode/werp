@@ -1,23 +1,9 @@
 import cx from "classnames";
 import * as React from "react";
+import { AlignType, MarginType } from "../enums";
+
+import "./style.scss";
 import * as style from "./style.scss";
-
-export  enum AlignType {
-    left,
-    center,
-    right
-}
-
-export enum MarginType {
-    left,
-    right,
-    top,
-    bottom,
-    left_x2,
-    right_x2,
-    top_x2,
-    bottom_x2
-}
 
 export interface IDescription {
     children: string;
@@ -27,7 +13,7 @@ export interface IDescription {
 }
 
 // tslint:disable-next-line:variable-name
-const Description = ({ children, align, className, margin }) => {
+const Description: React.FC<IDescription> = ({ children, align, className, margin }) => {
     return (
         <p
             className={cx(
@@ -45,7 +31,8 @@ const Description = ({ children, align, className, margin }) => {
 Description.defaultProps = {
     children: "",
     className: "",
-    align: "left",
-    margin: false,
+    align: AlignType.left,
+    margin: MarginType.none,
 };
+
 export { Description };
