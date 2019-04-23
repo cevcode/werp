@@ -30,6 +30,13 @@ export enum ISize {
     full = "full"
 }
 
+export enum ISizeIcon {
+    s = 'tiny',
+    m = 'small',
+    l = 'medium',
+    xl = 'large',
+}
+
 export enum WeightEnum {
     w500 = "500",
     w600 = "600",

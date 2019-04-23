@@ -13,10 +13,11 @@ export interface IButton {
     margin?: MarginType;
     disabled?: boolean;
     type?: ButtonType;
+    icon?: string;
 }
 
 // tslint:disable-next-line:variable-name
-const Button: React.FC<IButton> = ({ onClick, className, children, size, disabled, style, type, margin }) => {
+const Button: React.FC<IButton> = ({ onClick, className, children, size, disabled, style, type, margin, icon }) => {
     return (
         <button
             onClick={onClick}
