@@ -64,7 +64,6 @@ const Header: React.FC<IHeader>  = ({ authorized = false }) => {
                 <Row className={cx(style.header__item, style.header__buttons)}>
                     {config.map(item => {
                         const { icon, name } = item;
-                        console.log(icon);
                         return <IconButton key={name} icon={icon} />
 
                     })}
