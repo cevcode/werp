@@ -7,8 +7,23 @@
     margin-right: 10px;
   }
 
-  &__home {
-    height: 60px;
-    padding: 0 15px;
+  &__buttons {
+    > * {
+      width: 42px;
+    }
   }
+
+  &__item {
+    border-left: 1px solid $grey;
+    border-right: 1px solid $grey;
+    padding: 10px 15px;
+    width: auto;
+    &:last-child {
+      border-left: 0;
+    }
+  }
+}
+
+.search {
+  height: 42px;
 }

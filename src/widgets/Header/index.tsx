@@ -1,11 +1,12 @@
 import * as React from "react";
+import cx from 'classnames';
 import { Title } from "ui/Title";
 import { Button } from "ui/Button";
 import { Icon } from "ui/Icon";
 import { Row, Column } from "ui/Layout";
 import { Profile } from 'widgets/Profile';
 import { Link } from "react-router-dom";
-import {Colors, ISize, ISizeIcon, PaddingType, MarginType } from "ui/enums";
+import {ISize, ISizeIcon, PaddingType, MarginType } from "ui/enums";
 
 import "statics/logo.svg";
 import { default as logo } from "statics/logo.svg";
@@ -50,10 +51,17 @@ const Header: React.FC<IHeader>  = ({ authorized = false }) => {
         );
     }
     return (
-        <Row ai="center" jc="space-between" className={style.header__home}>
-            <Button size={ISize.xl}>{renderLogo('projects')}</Button>
-            <Row>
-                <Row jc="flex-end">
+        <Row ai="center" jc="space-between">
+            <Row jc="flex-start">
+                <Column className={style.header__item}>
+                    <Button size={ISize.xl}>{renderLogo('projects')}</Button>
+                </Column>
+                <Column className={cx(style.header__item, style.search)}>
+                    search...
+                </Column>
+            </Row>
+            <Row jc="flex-end">
+                <Row className={cx(style.header__item, style.header__buttons)}>
                     {config.map(item => {
                         const { icon, name } = item;
                         console.log(icon);
@@ -61,9 +69,11 @@ const Header: React.FC<IHeader>  = ({ authorized = false }) => {
 
                     })}
                 </Row>
-                <Button size={ISize.xxl}>
-                    <Profile size={ISize.s} />
-                </Button>
+                <Column className={style.header__item}>
+                    <Button size={ISize.xxl}>
+                        <Profile size={ISize.s} />
+                    </Button>
+                </Column>
             </Row>
         </Row>
     )
