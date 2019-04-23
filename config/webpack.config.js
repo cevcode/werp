@@ -302,6 +302,7 @@ module.exports = function(webpackEnv) {
                 .map(ext => `.${ext}`)
                 .filter(ext => useTypeScript || !ext.includes('ts')),
             alias: {
+                base: path.resolve('./src/base'),
                 widgets: path.resolve('./src/widgets'),
                 ui: path.resolve('./src/ui'),
                 statics: path.resolve('./src/statics'),
