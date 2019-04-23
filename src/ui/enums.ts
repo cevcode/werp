@@ -17,6 +17,14 @@ export enum MarginType {
     bottom_x2 = "bottom_x2"
 }
 
+export enum PaddingType {
+    none = "none",
+    s = "5",
+    m = "10",
+    l = "15",
+    xl = "20",
+}
+
 export enum FillType {
     void = "void",
     fill = "fill"
@@ -27,7 +35,8 @@ export enum ISize {
     m = "m",
     l = "l",
     xl = "xl",
-    full = "full"
+    full = "full",
+    auto = "auto",
 }
 
 export enum ISizeIcon {
@@ -48,5 +57,6 @@ export type ButtonType = "submit" | "reset" | "button";
 export enum Colors {
     "white",
     "orange",
+    "blue",
     "black",
 }

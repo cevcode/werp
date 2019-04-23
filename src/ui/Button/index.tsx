@@ -1,6 +1,6 @@
 import * as React from "react";
 import cx from "classnames";
-import { ISize, MarginType, FillType, ButtonType } from "../enums";
+import { ISize, MarginType, FillType, ButtonType, PaddingType } from "../enums";
 
 import "./style.scss";
 
@@ -11,13 +11,13 @@ export interface IButton {
     text?: string;
     style?: FillType;
     margin?: MarginType;
+    padding?: PaddingType;
     disabled?: boolean;
     type?: ButtonType;
-    icon?: string;
 }
 
 // tslint:disable-next-line:variable-name
-const Button: React.FC<IButton> = ({ onClick, className, children, size, disabled, style, type, margin, icon }) => {
+const Button: React.FC<IButton> = ({ onClick, className, children, size, disabled, style, type, margin, padding }) => {
     return (
         <button
             onClick={onClick}
@@ -28,6 +28,7 @@ const Button: React.FC<IButton> = ({ onClick, className, children, size, disable
                 `ux-button__size_${size}`,
                 `ux-button__style_${style}`,
                 `ux-button__margin_${margin}`,
+                `ux-button__padding_${padding}`,
                 className
             )}
         >
@@ -41,6 +42,7 @@ Button.defaultProps = {
     style: FillType.void,
     disabled: false,
     margin: MarginType.none,
+    padding: PaddingType.none,
 };
 
 export { Button };

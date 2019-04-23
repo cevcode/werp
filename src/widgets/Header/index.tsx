@@ -5,12 +5,13 @@ import { Icon } from "ui/Icon";
 import { Row, Column } from "ui/Layout";
 import { Profile } from 'widgets/Profile';
 import { Link } from "react-router-dom";
-import { ISize, ISizeIcon } from "ui/enums";
+import {Colors, ISize, ISizeIcon, PaddingType, MarginType } from "ui/enums";
 
 import "statics/logo.svg";
 import { default as logo } from "statics/logo.svg";
 
 import * as style from "./style.scss";
+import config from './config';
 
 // tslint:disable-next-line:no-empty-interface
 export interface IHeader {
@@ -22,8 +23,18 @@ function renderLogo(title) {
     <Row jc="center" ai="center">
         <img className={style.header__logo} src={logo} alt="logo"/>
         <Title color="white" size={ISize.s}>{title}</Title>
-        {/*<Icon color="black" icon="alarm_on" size={ISizeIcon.s} />*/}
     </Row>
+    )
+}
+
+function IconButton({ icon }) {
+    if(!icon) {
+        return null;
+    }
+    return (
+        <Button size={ISize.auto} margin={MarginType.right} padding={PaddingType.s}>
+            <Icon color="white" size={ISizeIcon.s} icon={icon} />
+        </Button>
     )
 }
 
@@ -41,9 +52,19 @@ const Header: React.FC<IHeader>  = ({ authorized = false }) => {
     return (
         <Row ai="center" jc="space-between" className={style.header__home}>
             <Button size={ISize.xl}>{renderLogo('projects')}</Button>
-            <Button size={ISize.xl}>
-                <Profile size={ISize.s} />
-            </Button>
+            <Row>
+                <Row jc="flex-end">
+                    {config.map(item => {
+                        const { icon, name } = item;
+                        console.log(icon);
+                        return <IconButton key={name} icon={icon} />
+
+                    })}
+                </Row>
+                <Button size={ISize.xl}>
+                    <Profile size={ISize.s} />
+                </Button>
+            </Row>
         </Row>
     )
 };
