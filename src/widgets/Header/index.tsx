@@ -61,7 +61,7 @@ const Header: React.FC<IHeader>  = ({ authorized = false }) => {
 
                     })}
                 </Row>
-                <Button size={ISize.xl}>
+                <Button size={ISize.xxl}>
                     <Profile size={ISize.s} />
                 </Button>
             </Row>

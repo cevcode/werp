@@ -35,6 +35,7 @@ export enum ISize {
     m = "m",
     l = "l",
     xl = "xl",
+    xxl = "xxl",
     full = "full",
     auto = "auto",
 }

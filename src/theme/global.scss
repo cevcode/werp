@@ -15,9 +15,11 @@ $brown: #484848;
 
 @mixin base-sizes() {
   &__size {
+    &_xxl {
+      width: 220px;
+    }
     &_xl {
       width: 180px;
-      height: 42px;
     }
     &_l {
       width: 130px;
